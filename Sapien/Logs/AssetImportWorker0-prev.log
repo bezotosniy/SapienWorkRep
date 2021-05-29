@@ -15,11 +15,11 @@ D:/UnityProjects/Work/SapienWorkRep/Sapien
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63973
+63929
 Successfully changed project path to: D:/UnityProjects/Work/SapienWorkRep/Sapien
 D:/UnityProjects/Work/SapienWorkRep/Sapien
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 301.13 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 259.46 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.0f1 (c7b5465681fb)
 [Subsystems] Discovering subsystems at path D:/UnityProjects/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
@@ -35,184 +35,57 @@ Initialize mono
 Mono path[0] = 'D:/UnityProjects/2020.3.0f1/Editor/Data/Managed'
 Mono path[1] = 'D:/UnityProjects/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/UnityProjects/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56256
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/UnityProjects/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002354 seconds.
+Registered in 0.002506 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 325.75 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 333.51 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.389 seconds
+- Completed reload, in  4.095 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003490 seconds.
+Registered in 0.003374 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 4.35 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.43 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.183 seconds
+- Completed reload, in  1.054 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
-Refreshing native plugins compatible for Editor in 2.95 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
+Refreshing native plugins compatible for Editor in 2.54 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 114.7 MB.
-System memory in use after: 114.6 MB.
+Unloading 1221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.0 MB.
+System memory in use after: 115.0 MB.
 
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1703.
-Total: 2.119100 ms (FindLiveObjects: 0.146600 ms CreateObjectMapping: 0.044000 ms MarkObjects: 1.762900 ms  DeleteObjects: 0.164500 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Fonts/Montserrat/Montserrat-MediumItalic.ttf
-  artifactKey: Guid(1f285a8f8cce7554a914fb20725fb513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-MediumItalic.ttf using Guid(1f285a8f8cce7554a914fb20725fb513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eed7e56a1879bfa8007700e7268143e') in 0.263611 seconds
-  Import took 0.295102 seconds .
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1707.
+Total: 2.051100 ms (FindLiveObjects: 0.154600 ms CreateObjectMapping: 0.043400 ms MarkObjects: 1.692200 ms  DeleteObjects: 0.159500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002062 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Black.ttf
-  artifactKey: Guid(7e51b19c571492445ae59e36c7ef2e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Black.ttf using Guid(7e51b19c571492445ae59e36c7ef2e8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c24c091eb9f6fc16df4912ab68ed6a') in 0.016700 seconds
-  Import took 0.041969 seconds .
+  path: Assets/Scenes/2.Battle/Battle 1.unity
+  artifactKey: Guid(a9d100ec530ce49df92c987d154e73e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/2.Battle/Battle 1.unity using Guid(a9d100ec530ce49df92c987d154e73e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89e27b45b9f4cc125fa986ccf84dc89c') in 0.195689 seconds
+  Import took 0.417658 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.003261 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Bold.ttf
-  artifactKey: Guid(3163981eb7eca9749823c59fee85ff53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Bold.ttf using Guid(3163981eb7eca9749823c59fee85ff53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '849a542876542cd4b29c3e184c4bf867') in 0.045735 seconds
-  Import took 0.093434 seconds .
+  Time since last request: 29.303816 seconds.
+  path: Assets/Scenes/3. First Continent/1.3.unity
+  artifactKey: Guid(858f0e5f9abdc4805b0e91d2c1a14ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/3. First Continent/1.3.unity using Guid(858f0e5f9abdc4805b0e91d2c1a14ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3333cd14b6beba9c2981defd81ab7f') in 0.008392 seconds
+  Import took 0.205669 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.001978 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-SemiBoldItalic.ttf
-  artifactKey: Guid(c93f0835d79828b47afdd6675258255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-SemiBoldItalic.ttf using Guid(c93f0835d79828b47afdd6675258255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6812c2b9eab03b5a1896e3db79a9090') in 0.020200 seconds
-  Import took 0.029519 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002282 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-BlackItalic.ttf
-  artifactKey: Guid(02481c8afd9f4164d86cd145c0c54a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-BlackItalic.ttf using Guid(02481c8afd9f4164d86cd145c0c54a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71b0b4b7cb07f97842c79d04e8aa7f41') in 0.019416 seconds
-  Import took 0.042957 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002089 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-ExtraLightItalic.ttf
-  artifactKey: Guid(4160803379bb5ff45b95f03c5951ca84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-ExtraLightItalic.ttf using Guid(4160803379bb5ff45b95f03c5951ca84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c700d7e417b3d0a84b0684c1fd0238') in 0.017416 seconds
-  Import took 0.050175 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002099 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-LightItalic.ttf
-  artifactKey: Guid(43e28fd63ac4fd040ba37d2d970322d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-LightItalic.ttf using Guid(43e28fd63ac4fd040ba37d2d970322d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19708e8e5997f78353c3e9a6d48b3bad') in 0.018466 seconds
-  Import took 0.077384 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002023 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-BoldItalic.ttf
-  artifactKey: Guid(1b456b484995b9b4db7ac91869bbbd18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-BoldItalic.ttf using Guid(1b456b484995b9b4db7ac91869bbbd18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00317cb64b9410798f78551b53569be9') in 0.022683 seconds
-  Import took 0.037006 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000787 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Thin.ttf
-  artifactKey: Guid(b43b66798213b5d43a690823c6f3e659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Thin.ttf using Guid(b43b66798213b5d43a690823c6f3e659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33eb23aa1dc383f1c418b0306e5bdd00') in 0.017925 seconds
-  Import took 0.045229 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000806 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf
-  artifactKey: Guid(e47718f7f5085d144aa9a8201a5477bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf using Guid(e47718f7f5085d144aa9a8201a5477bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a8924644ad86ec2d7c93c8d6a00aea') in 0.018580 seconds
-  Import took 0.072289 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000884 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-ExtraBold.ttf
-  artifactKey: Guid(09cb59be33ff18045abe4a87faadb45a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-ExtraBold.ttf using Guid(09cb59be33ff18045abe4a87faadb45a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2a62031c9dfb2db0d506992fb11b318') in 0.015808 seconds
-  Import took 0.053358 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000866 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-SemiBold.ttf
-  artifactKey: Guid(91af7b09fe4468a4d951777bfd627c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-SemiBold.ttf using Guid(91af7b09fe4468a4d951777bfd627c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9570f1eedda2b2c9686a9efbf8cfd7c') in 0.017915 seconds
-  Import took 0.049045 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001019 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Regular.ttf
-  artifactKey: Guid(df20cfbafc168f046b8cf81b48da4f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Regular.ttf using Guid(df20cfbafc168f046b8cf81b48da4f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5afa517c34504aa2854c00c8d9b33059') in 0.015561 seconds
-  Import took 0.040908 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000805 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Light.ttf
-  artifactKey: Guid(a9c14a6f19ebce84a91619cb0b1c114f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Light.ttf using Guid(a9c14a6f19ebce84a91619cb0b1c114f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c8a0e7b53b71a8b45d8e8320ee0f1d4') in 0.038470 seconds
-  Import took 0.076430 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001050 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-ThinItalic.ttf
-  artifactKey: Guid(5133371c5fed38848ab14c396a3edecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-ThinItalic.ttf using Guid(5133371c5fed38848ab14c396a3edecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a05693b29ad7518e2961bc49ca1d7ad0') in 0.016512 seconds
-  Import took 0.031331 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000848 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Italic.ttf
-  artifactKey: Guid(b1eadcce3a7ff764780c77f89b765183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Italic.ttf using Guid(b1eadcce3a7ff764780c77f89b765183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16dd35931bbe15895c9bf3072f34fdb7') in 0.015397 seconds
-  Import took 0.032421 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000912 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-ExtraLight.ttf
-  artifactKey: Guid(cc954c8beca4e934f9ecbf2a784ee617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-ExtraLight.ttf using Guid(cc954c8beca4e934f9ecbf2a784ee617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bbe6b95ac7564ebef89404524b9e798') in 0.015889 seconds
-  Import took 0.037711 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001033 seconds.
-  path: Assets/Fonts/Montserrat/Montserrat-Medium.ttf
-  artifactKey: Guid(87a9f77a1598e4f4fb11a5b2cb6e891b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Montserrat/Montserrat-Medium.ttf using Guid(87a9f77a1598e4f4fb11a5b2cb6e891b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee94cf085b41f0626aad85f3d71652d8') in 0.015799 seconds
-  Import took 0.037431 seconds .
-
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

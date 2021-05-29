@@ -12,6 +12,7 @@ public class EventComputer : MonoBehaviour
     }
    public void InteractiveOn() { anim.SetBool("Interactive", true); }
     public void InteractiveOff() { anim.SetBool("Interactive", false); }
+   
     // Update is called once per frame
     void Update()
     {

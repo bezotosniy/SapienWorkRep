@@ -45,24 +45,11 @@ public class StartMenuController : MonoBehaviour
     public void UNchoiceGirl() { anim.SetBool("Girl", false); }
     public void MakeChoiceGirl() { anim.SetTrigger("ChangeMale"); MaleBar.sprite = prpl; PlayerPrefs.SetString("gender", "female"); genderExeption.text = "Вы уверены, что хотите выбрать женский пол?"; }
     public void MakeChoiceBoy() { anim.SetTrigger("ChangeMale"); MaleBar.sprite = blue; PlayerPrefs.SetString("gender", "male"); genderExeption.text = "Вы уверены, что хотите выбрать мужской пол?"; }
-    public void YesGender()
-    {
-        anim.SetTrigger("ChangeMale");
-        if (PlayerPrefs.GetString("gender") == "female") { girl.SetActive(true); boy.SetActive(false); }
-        if (PlayerPrefs.GetString("gender") == "male") { boy.SetActive(true); girl.SetActive(false); }
-
-    }
     public void easyON() { anim.SetBool("easy", true); } public void easyOFF() { anim.SetBool("easy", false); }
     public void normalON() { anim.SetBool("normal", true); } public void normalOFF() { anim.SetBool("normal", false); }
     public void hardON() { anim.SetBool("hard", true); } public void hardOFF() { anim.SetBool("hard", false); }
-    public void ChoiceName()
-    {
-        anim.SetBool("ChousenName", true);
-    }
-    public void ChoiceNameBack()
-    {
-        anim.SetBool("ChousenName", false);
-    }
+    public void ChoiceName() {anim.SetBool("ChousenName", true);}
+    public void ChoiceNameBack(){anim.SetBool("ChousenName", false);}
     public void Accept()
     {
         Debug.Log(PlayerPrefs.GetString("name"));
@@ -72,7 +59,17 @@ public class StartMenuController : MonoBehaviour
 
 
     }
-    
+    public void YesGender()
+    {
+        anim.SetTrigger("ChangeMale");
+        if (PlayerPrefs.GetString("gender") == "female") { girl.SetActive(true); boy.SetActive(false); }
+        if (PlayerPrefs.GetString("gender") == "male") { boy.SetActive(true); girl.SetActive(false); }
+
+    }
+    public void TelekClick()
+    {
+
+    }
 
 
 }
