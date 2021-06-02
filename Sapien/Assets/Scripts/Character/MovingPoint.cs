@@ -22,7 +22,7 @@ public class MovingPoint : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             if (Cam != null)
-            { 
+            {
                 RaycastHit hit;
                 var mousePos = Input.mousePosition;
                 RayMouse = Cam.ScreenPointToRay(mousePos);
@@ -37,7 +37,7 @@ public class MovingPoint : MonoBehaviour
                         MP.second = false;
                         go = Instance.transform.position;
                         Destroy(Instance, 1.5f);
-                        
+
                     }
                 }
             }
