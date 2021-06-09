@@ -17,6 +17,7 @@ public class StartMenuControllerNoReg : MonoBehaviour
     public GameObject FadePanel;
     public GameObject boy, girl;
     public Animator anim;
+    public bool RecordResult;
 
     /*private void Start()
     {
@@ -171,7 +172,10 @@ public class StartMenuControllerNoReg : MonoBehaviour
     }
     public void OnClickExitTV()
     {
-        StartCoroutine(TaxiDriveAvay());
+        if (RecordResult)
+        {
+            StartCoroutine(TaxiDriveAvay());
+        }
         Debug.Log("MicTestExited");
         anim.Play("MicTest0");
     }
