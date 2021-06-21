@@ -9,6 +9,19 @@ public class PhoneManager : MonoBehaviour
     public float Increment;
     public GameObject StoryScreen;
     public Animator anim;
+    public GameObject Notification;
+    public bool closeable = false;
+    public Vector3 StartMousePos;
+    public Vector3 EndMousePos;
+    public GameObject Messages;
+    private bool QuestAvailable = false;
+    public string[] QuestType = { "Start of fragment", "Story quest", "Battle", "Wish mission" };
+    public bool SecondQuestAvailable = false;
+    public GameObject[] QuestIcon;
+    public GameObject[] QuestPrice;
+    public GameObject[] QuestDescription;
+    public int ActiveQuests = 0;
+    public int CurrentQuestType;
 
     public void OnButtonClickPhoneOpener()
     {
@@ -65,6 +78,125 @@ public class PhoneManager : MonoBehaviour
         GetComponent<Button>().interactable = true;
     }
 
+    public void OnPointerClickMessagesIcon(string tag)
+    {
+        StartCoroutine(PhoneCloser());
+        anim.Play("Messages");
+        GetComponent<Button>().interactable = false;
+    }
 
+    public void OnPointerClickMessagesIconClose(string tag)
+    {
+        anim.Play("Messages0");
+        Phone.SetActive(true);
+        GetComponent<Button>().interactable = true;
+        QuestIcon[ActiveQuests].SetActive(true);
+        ActiveQuests++;
+    }
 
+    public void OnNotificationOpener()
+    {
+        Notification.SetActive(true);
+        Messages.GetComponent<MessagesManager>().QuestAvailable = QuestAvailable;
+        if (!QuestAvailable)
+        {
+            GameObject.Find("QuestType").GetComponent<Text>().text = QuestType[0];
+            Messages.GetComponent<MessagesManager>().AddQuest("System", QuestType[0]);
+            anim.Play("NotificationOpen");
+            /*Messages.GetComponent<MessagesManager>().OnClickChatOpener(QuestType[0]);*/
+            QuestAvailable = true;
+            CurrentQuestType = 0;
+        }
+        else
+        {
+            if (!SecondQuestAvailable)
+            {
+                GameObject.Find("QuestType").GetComponent<Text>().text = QuestType[1];
+                Messages.GetComponent<MessagesManager>().AddQuest("System", QuestType[1]);
+                anim.Play("NotificationOpen");
+                /*Messages.GetComponent<MessagesManager>().OnClickChatOpener(QuestType[1]);*/
+                SecondQuestAvailable = true;
+                CurrentQuestType = 1;
+            }
+            else
+            {
+                switch (Random.Range(0, 2))
+                {
+                    case 0:
+                        GameObject.Find("QuestType").GetComponent<Text>().text = QuestType[2];
+                        Messages.GetComponent<MessagesManager>().AddQuest("Andrew", QuestType[2]);
+                        CurrentQuestType = 2;
+                        break;
+                    case 1:
+                        GameObject.Find("QuestType").GetComponent<Text>().text = QuestType[3];
+                        Messages.GetComponent<MessagesManager>().AddQuest("Andrew", QuestType[3]);
+                        CurrentQuestType = 3;
+                        break;
+
+                }
+                anim.Play("NotificationOpen");
+            }
+        }
+        
+    }
+
+    public void OnNotificationClick()
+    {
+        anim.Play("NotificationOpen0");
+        anim.Play("Messages");
+        GetComponent<Button>().interactable = false;
+        closeable = true;
+        QuestDescription[ActiveQuests].GetComponent<Text>().text = QuestType[CurrentQuestType];
+                
+    }
+
+    public void OnNotificationPointerDown()
+    {
+        StartMousePos = Input.mousePosition;
+        Debug.Log("Down");
+    }
+
+    public void OnNotificationPointerUp()
+    {
+        Debug.Log("Up");
+        EndMousePos = Input.mousePosition;
+        if (EndMousePos.x > StartMousePos.x && closeable)
+        {
+            anim.Play("NotificationOpen0");
+        }
+    }
+
+    public void OnClickQuestIconDecline(int n)
+    {
+        Debug.Log("Closing");
+        switch (n)
+        {
+            case 0:
+                QuestDescription[2] = QuestDescription[1];
+                QuestDescription[1] = QuestDescription[0];
+                QuestPrice[2] = QuestPrice[1];
+                QuestPrice[1] = QuestPrice[0];
+                Debug.Log("Case 1");
+                break;
+            case 1:
+                QuestPrice[1] = QuestPrice[2];
+                QuestDescription[1] = QuestDescription[2];
+                break;
+            case 2:
+                break;
+        }
+        if (QuestIcon[2].activeSelf)
+        {
+            QuestIcon[2].SetActive(false);
+        }
+        else if (QuestIcon[1].activeSelf)
+        {
+            QuestIcon[1].SetActive(false);
+        }
+        else
+        {
+            QuestIcon[0].SetActive(false);
+        }
+        ActiveQuests--;
+    }
 }

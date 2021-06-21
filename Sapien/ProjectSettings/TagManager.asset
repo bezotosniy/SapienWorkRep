@@ -6,6 +6,10 @@ TagManager:
   tags:
   - KatScene
   - Ground
+  - Start of fragment
+  - Story quest
+  - Battle
+  - Wish mission
   layers:
   - Default
   - TransparentFX
