@@ -17,11 +17,11 @@ public class PhoneManager : MonoBehaviour
     private bool QuestAvailable = false;
     public string[] QuestType = { "Start of fragment", "Story quest", "Battle", "Wish mission" };
     public bool SecondQuestAvailable = false;
-    public GameObject[] QuestIcon;
-    public GameObject[] QuestPrice;
-    public GameObject[] QuestDescription;
+    
     public int ActiveQuests = 0;
     public int CurrentQuestType;
+
+    public bool NotOpened = true;
 
     public void OnButtonClickPhoneOpener()
     {
@@ -90,13 +90,12 @@ public class PhoneManager : MonoBehaviour
         anim.Play("Messages0");
         Phone.SetActive(true);
         GetComponent<Button>().interactable = true;
-        QuestIcon[ActiveQuests].SetActive(true);
-        ActiveQuests++;
+        GetComponent<QuestPanelManager>().AddQuestToActiveList("System", QuestType[CurrentQuestType]);
     }
 
     public void OnNotificationOpener()
     {
-        Notification.SetActive(true);
+        StartCoroutine(Notifying());
         Messages.GetComponent<MessagesManager>().QuestAvailable = QuestAvailable;
         if (!QuestAvailable)
         {
@@ -140,63 +139,41 @@ public class PhoneManager : MonoBehaviour
         
     }
 
-    public void OnNotificationClick()
+    public IEnumerator Notifying()
     {
-        anim.Play("NotificationOpen0");
-        anim.Play("Messages");
-        GetComponent<Button>().interactable = false;
-        closeable = true;
-        QuestDescription[ActiveQuests].GetComponent<Text>().text = QuestType[CurrentQuestType];
-                
-    }
-
-    public void OnNotificationPointerDown()
-    {
-        StartMousePos = Input.mousePosition;
-        Debug.Log("Down");
-    }
-
-    public void OnNotificationPointerUp()
-    {
-        Debug.Log("Up");
-        EndMousePos = Input.mousePosition;
-        if (EndMousePos.x > StartMousePos.x && closeable)
+        Notification.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        if (NotOpened)
         {
             anim.Play("NotificationOpen0");
         }
     }
 
-    public void OnClickQuestIconDecline(int n)
+    public void OnNotificationClick()
     {
-        Debug.Log("Closing");
-        switch (n)
+        NotOpened = false;
+        anim.Play("NotificationOpen0");
+        anim.Play("Messages");
+        GetComponent<Button>().interactable = false;
+        closeable = true;
+        if (ActiveQuests < 3)
         {
-            case 0:
-                QuestDescription[2] = QuestDescription[1];
-                QuestDescription[1] = QuestDescription[0];
-                QuestPrice[2] = QuestPrice[1];
-                QuestPrice[1] = QuestPrice[0];
-                Debug.Log("Case 1");
-                break;
-            case 1:
-                QuestPrice[1] = QuestPrice[2];
-                QuestDescription[1] = QuestDescription[2];
-                break;
-            case 2:
-                break;
+            ActiveQuests++;
         }
-        if (QuestIcon[2].activeSelf)
+        ActiveQuests++;
+    }
+
+    public void OnNotificationPointerDown()
+    {
+        StartMousePos = Input.mousePosition;
+    }
+
+    public void OnNotificationPointerUp()
+    {
+        EndMousePos = Input.mousePosition;
+        if (EndMousePos.x > StartMousePos.x && closeable)
         {
-            QuestIcon[2].SetActive(false);
+            anim.Play("NotificationOpen0");
         }
-        else if (QuestIcon[1].activeSelf)
-        {
-            QuestIcon[1].SetActive(false);
-        }
-        else
-        {
-            QuestIcon[0].SetActive(false);
-        }
-        ActiveQuests--;
     }
 }

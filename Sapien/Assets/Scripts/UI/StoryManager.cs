@@ -30,8 +30,6 @@ public class StoryManager : MonoBehaviour
                 OnPointerEnterSeason("Season" + season);
                 SeasonNumber = season;
             }
-            Debug.Log("Previous: " + SeasonNumber);
-            Debug.Log("Current: " + season);
         }
     }
 
@@ -45,7 +43,6 @@ public class StoryManager : MonoBehaviour
         {
             if ((int)System.Char.GetNumericValue(tag[6]) <= MaxSeasonAvailable)
             {
-                Debug.Log("Highlighted Season: " + tag);
                 GameObject.Find(tag).GetComponent<RectTransform>().localScale = new Vector3(Increment, Increment, 1f);
             }
         }
@@ -60,13 +57,11 @@ public class StoryManager : MonoBehaviour
         if (("Season" + SeasonNumber) != tag)
         {
             GameObject.Find(tag).GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-            Debug.Log("Downlighted Season: " + tag);
         }
     }
 
     public void OnPointerEnterSeason(string tag)
     {
-        Debug.Log(tag);
         GameObject.Find(tag).GetComponent<Image>().sprite = SeasonSprite[1];
         GameObject.Find(tag).GetComponent<RectTransform>().localScale = new Vector3(1.125f*Increment, 1.2f*Increment, 1);
     }

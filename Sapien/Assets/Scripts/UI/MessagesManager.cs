@@ -25,25 +25,17 @@ public class MessagesManager : MonoBehaviour
         OpenedQuest = (int)System.Char.GetNumericValue(target.name[0]);
     }
 
-    /*public void OnClickChatOpener(string tag)
-    {
-        ChatIcon.SetActive(false);
-        ChatPanel.SetActive(true);
-        QuestText.GetComponent<Text>().text = tag;
-    }*/
-
     public void OnClickChatDelete()
     {
-        Debug.Log("Deleting");
         ChatIcon.SetActive(true);
         ChatPanel.SetActive(false);
+        GameObject.Find("PhoneButton").GetComponent<QuestPanelManager>().OnClickQuestIconDecline(Quests[OpenedQuest].tag);
         Quests[OpenedQuest].SetActive(false);
         Destroy(Quests[OpenedQuest]);
         for (int k = OpenedQuest; k >= 0; k--)
         {
             if (Quests[k] != null)
             {
-                Debug.Log("Moving");
                 Vector3 CurrentPos = Quests[k].GetComponent<RectTransform>().position;
                 Quests[k].GetComponent<RectTransform>().position = new Vector3(CurrentPos.x, CurrentPos.y + Increment, CurrentPos.z);
             }
@@ -57,7 +49,6 @@ public class MessagesManager : MonoBehaviour
         {
             if (Quests[k] != null)
             {
-                Debug.Log("Moving");
                 Vector3 CurrentPos = Quests[k].GetComponent<RectTransform>().position;
                 Quests[k].GetComponent<RectTransform>().position = new Vector3(CurrentPos.x, CurrentPos.y - Increment, CurrentPos.z);
             }

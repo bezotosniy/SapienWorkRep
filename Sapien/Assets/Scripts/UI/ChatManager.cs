@@ -7,6 +7,5 @@ public class ChatManager : MonoBehaviour
     public void OnChatClickOpener()
     {
         GameObject.Find("Messages").GetComponent<MessagesManager>().OnClickChatOpener(this.gameObject);
-        Debug.Log(gameObject.tag);
     }
 }
