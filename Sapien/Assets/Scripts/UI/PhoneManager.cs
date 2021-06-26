@@ -22,6 +22,7 @@ public class PhoneManager : MonoBehaviour
     public int CurrentQuestType;
 
     public bool NotOpened = true;
+    public GameObject CameraPanel;
 
     public void OnButtonClickPhoneOpener()
     {
@@ -88,14 +89,13 @@ public class PhoneManager : MonoBehaviour
     public void OnPointerClickMessagesIconClose(string tag)
     {
         anim.Play("Messages0");
-        Phone.SetActive(true);
         GetComponent<Button>().interactable = true;
         GetComponent<QuestPanelManager>().AddQuestToActiveList("System", QuestType[CurrentQuestType]);
     }
 
     public void OnNotificationOpener()
     {
-        StartCoroutine(Notifying());
+        Notification.SetActive(true);
         Messages.GetComponent<MessagesManager>().QuestAvailable = QuestAvailable;
         if (!QuestAvailable)
         {
@@ -119,6 +119,7 @@ public class PhoneManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine(Notifying());
                 switch (Random.Range(0, 2))
                 {
                     case 0:
@@ -136,12 +137,11 @@ public class PhoneManager : MonoBehaviour
                 anim.Play("NotificationOpen");
             }
         }
-        
+        GetComponent<QuestPanelManager>().QuestAdded = true;
     }
 
     public IEnumerator Notifying()
     {
-        Notification.SetActive(true);
         yield return new WaitForSeconds(5f);
         if (NotOpened)
         {
@@ -173,7 +173,25 @@ public class PhoneManager : MonoBehaviour
         EndMousePos = Input.mousePosition;
         if (EndMousePos.x > StartMousePos.x && closeable)
         {
+            GetComponent<QuestPanelManager>().QuestAdded = false;
             anim.Play("NotificationOpen0");
         }
+    }
+
+    public void OnClickCameraOpen()
+    {
+        CameraPanel.SetActive(true);
+        anim.Play("CameraOpen");
+        GetComponent<Button>().interactable = false;
+        StartCoroutine(PhoneCloser());
+        CameraPanel.GetComponent<CameraManager>().enabled = true;
+    }
+
+    public void OnClickCameraClose()
+    {
+        anim.Play("CameraOpen0");
+        GetComponent<Button>().interactable = true;
+        CameraPanel.GetComponent<CameraManager>().enabled = false;
+        Camera.main.GetComponent<Transform>().localEulerAngles = new Vector3(0f, 0f, 0f);
     }
 }

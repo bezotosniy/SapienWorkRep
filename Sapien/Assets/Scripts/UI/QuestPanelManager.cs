@@ -8,23 +8,31 @@ public class QuestPanelManager : MonoBehaviour
     public GameObject[] QuestIcon;
     public GameObject[] QuestPrice;
     public GameObject[] QuestDescription;
+    public Animator[] anim;
+    public GameObject[] FadePanel;
     public int LastActiveQuest;
     public GameObject Warning;
+    public GameObject[] QuestDecline;
+
+    public bool[] isHidden = new bool[3];
+    public bool QuestAdded = false;
 
     public void AddQuestToActiveList(string name, string tag)
     {
-        if (LastActiveQuest < 3)
-        {
-            QuestIcon[LastActiveQuest].SetActive(true);
-            QuestPrice[LastActiveQuest].GetComponent<Text>().text = Random.Range(100, 1000).ToString();
-            QuestDescription[LastActiveQuest].GetComponent<Text>().text = tag;
-            LastActiveQuest++;
+        if (QuestAdded) {
+            if (LastActiveQuest < 3)
+            {
+                QuestIcon[LastActiveQuest].SetActive(true);
+                QuestPrice[LastActiveQuest].GetComponent<Text>().text = Random.Range(100, 1000).ToString();
+                QuestDescription[LastActiveQuest].GetComponent<Text>().text = tag;
+                LastActiveQuest++;
+            }
+            else if (LastActiveQuest == 3)
+            {
+                StartCoroutine(WarningPanel());
+            }
+            QuestAdded = false;
         }
-        else if (LastActiveQuest == 3)
-        {
-            StartCoroutine(WarningPanel());
-        }
-        
     }
 
     IEnumerator WarningPanel()
@@ -110,5 +118,29 @@ public class QuestPanelManager : MonoBehaviour
             QuestIcon[0].SetActive(false);
         }
         LastActiveQuest--;
+    }
+
+    public void OnClickHidePanel(int n)
+    {
+        if (!isHidden[n])
+        {
+            anim[n].Play("QuestFade");
+            QuestDescription[n].SetActive(false);
+            QuestPrice[n].SetActive(false);
+            QuestDecline[n].SetActive(false);
+            isHidden[n] = true;
+        }
+    }
+
+    public void OnClickShowPanel(int n)
+    {
+        if (isHidden[n])
+        {
+            anim[n].Play("QuestFade0");
+            QuestDescription[n].SetActive(true);
+            QuestPrice[n].SetActive(true);
+            QuestDecline[n].SetActive(true);
+            isHidden[n] = false;
+        }
     }
 }
